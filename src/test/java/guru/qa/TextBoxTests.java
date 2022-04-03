@@ -19,6 +19,8 @@ public class TextBoxTests {
 
     @Test
     void fillFormTest() {
+
+
         Selenide.open("/automation-practice-form");
         $("#firstName").setValue("Lu");
         $("#lastName").setValue("Chon");
@@ -31,7 +33,8 @@ public class TextBoxTests {
         $("[aria-label$='December 30th, 1990']").click();
         $("#subjectsInput").setValue("E").pressEnter();
         $("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFromClasspath();
+        $("#uploadPicture").uploadFromClasspath("1.jpg");
+
 
     }
 }
