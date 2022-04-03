@@ -40,9 +40,9 @@ public class TextBoxTests {
         $("#state").scrollTo();
         $("#state").click();
         $("#stateCity-wrapper").$(byText("Haryana")).click();
-        $("[#city]").click();
-        $("[#stateCity-wrapper]").$(byText("Karnal")).click();
-        $("[#submit]").click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
+        $("#submit").click();
 
         $(".table-responsive").shouldHave(text("Student Name Lu Chon"), text("Student Email lee@gmail.com")
                 , text("Gender Female"), text("Mobile 9165355574"), text("Date of Birth 30 December,1990")
