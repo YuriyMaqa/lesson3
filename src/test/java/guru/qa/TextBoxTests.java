@@ -24,8 +24,8 @@ public class TextBoxTests {
     void fillFormTest() {
 
         Selenide.open("/automation-practice-form");
-        executeJavaScript("document.querySelector(\"footer\").hidden = " +
-                "'true';document.querySelector(\"#fixedban\").hidden = 'true'");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
 
         $("#firstName").setValue("Lu");
         $("#lastName").setValue("Chon");
