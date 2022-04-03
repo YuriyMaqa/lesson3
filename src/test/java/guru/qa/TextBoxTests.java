@@ -49,6 +49,5 @@ public class TextBoxTests {
                 , text("Subjects English"), text("Hobbies Music"), text("Picture 1.jpg"), text("Address 1st street"),
                 text("State and City Haryana Karnal"));
         $("#closeLargeModal").click();
-
     }
 }
