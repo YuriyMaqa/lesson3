@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxTests {
 
@@ -16,13 +17,15 @@ public class TextBoxTests {
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1980x1020";
-        Configuration.headless = true;
+
     }
 
     @Test
     void fillFormTest() {
 
         Selenide.open("/automation-practice-form");
+        executeJavaScript("document.querySelector(\"footer\").hidden = " +
+                "'true';document.querySelector(\"#fixedban\").hidden = 'true'");
 
         $("#firstName").setValue("Lu");
         $("#lastName").setValue("Chon");
