@@ -1,8 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.params.provider.ValueSource;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -14,7 +12,6 @@ public class TextBoxPage {
             inputUserEmail = $("#userEmail"),
             inputUserCurrentAddress = $("#currentAddress"),
             inputUserPermanentAddress = $("#permanentAddress"),
-            inputUserFormTitle = $(".main-header"),
             submitClick = $("#submit"),
             formResult = $(".border");
 
@@ -54,11 +51,6 @@ public class TextBoxPage {
 
     public TextBoxPage checkResult(String value) {
         formResult.shouldHave(text(value));
-        return this;
-    }
-
-    public TextBoxPage userFormTitle(String value) {
-        inputUserFormTitle.shouldHave(text(value));
         return this;
     }
 }
