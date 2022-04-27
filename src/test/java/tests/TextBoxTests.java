@@ -1,11 +1,7 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +13,7 @@ import static java.lang.String.format;
 @Owner("YuriyMaqa")
 @Feature("Учебные тесты")
 @Story("Тест формы регистрации")
-public class TextBoxTests {
+public class TextBoxTests extends TestBase {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
@@ -42,17 +38,12 @@ public class TextBoxTests {
             dateOfBirth = format("%s %s,%s", day, month, year),
             stateCity = format("%s %s", state, city);
 
-    @BeforeAll
-    static void setup() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1980x1020";
-    }
 
 
     @Test
     @DisplayName("Тест формы регистрации")
     void fillFormTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+
 
         registrationFormPage.openPage()
 
