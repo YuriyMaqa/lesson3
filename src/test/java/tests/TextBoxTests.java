@@ -13,6 +13,7 @@ import static java.lang.String.format;
 @Owner("YuriyMaqa")
 @Feature("Учебные тесты")
 @Story("Тест формы регистрации")
+@DisplayName("Тест формы регистрации")
 public class TextBoxTests extends TestBase {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
