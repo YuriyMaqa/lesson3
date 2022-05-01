@@ -1,5 +1,7 @@
 package tests.properties;
 
+import config.CredentialsConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 
 public class TestUrlWithProperties {
@@ -7,8 +9,13 @@ public class TestUrlWithProperties {
     void testPropertiesUrl() {
 
   String selenoid = System.getProperty("selenoid", "selenoid.autotests.cloud");
+    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    String login = config.loginSelenoid();
+    String password = config.passwordSelenoid();
+
+    System.out.println(login + " " + password);
 
 
-    System.out.println("https://user1:1234@" + selenoid + "/wd/hub");
+    System.out.println("https://"+ login + password + selenoid + "/wd/hub");
     }
 }
