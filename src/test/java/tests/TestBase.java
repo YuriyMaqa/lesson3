@@ -29,7 +29,7 @@ public class TestBase {
 
         Configuration.baseUrl = startUrl;
         Configuration.browserSize = propertyBrowserSize;
-        Configuration.remote = "https://"+ login + password + selenoidUrl;
+        Configuration.remote = "https://"+ login + ":" + password +"@" + selenoidUrl;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
