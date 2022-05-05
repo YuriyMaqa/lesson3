@@ -2,6 +2,8 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
+import config.CredentialsConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,6 +25,12 @@ public class ParameterizedTextBoxTest {
 
     @BeforeAll
     static void setUp() {
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+        String login = config.loginSelenoid();
+        String password = config.passwordSelenoid();
+        String selenoidUrl = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
+
+        Configuration.remote = "https://"+ login + ":" + password +"@" + selenoidUrl;
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
