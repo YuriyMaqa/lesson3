@@ -14,7 +14,7 @@ import static java.lang.String.format;
 @Feature("Учебные тесты")
 @Story("Тест формы регистрации")
 @DisplayName("Тест формы регистрации")
-public class TextBoxTests extends TestBase {
+public class TextBoxTests extends TestBase{
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
